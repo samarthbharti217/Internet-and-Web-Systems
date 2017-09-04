@@ -1,34 +1,170 @@
-<!DOCTYPE html">
-<html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-
-  <title>Magazine</title>
-   <style>
-
-     div.left{
-       background-color: lightgrey;
-       width: 75%;
-     }
-     div.right{
-       background-color: lightgrey;
-       width: 25%;
-     }
-
-     div.three-columns {
-    -webkit-column-count: 3; /* Chrome, Safari, Opera */
-    -moz-column-count: 3; /* Firefox */
-    column-count: 3;
+<!DOCTYPE html>
+  <html>
+  <head>
+    <style>
+    div {
+  	  color: black;
+      display: block;
+      border-style: solid;
+      border-width: 2px;
     }
-   </style>
+    h3 {
+    color: black;
+    text-align: center;
+    font-family: monospace;
 
- </head>
+    }
+    html {
+      background: url('background.jpg') no-repeat center center fixed;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+    }
+  </style>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>Magazine</title>
+  </head>
 
-  <body background="background.jpg" style="opacity: 0.5">
-    <div align="center" style="background-color:black;">
-      <h1 style="color:white; align=center;">Magazine</h1>
-      <br />
+  <body>
+    <header>
+	     <center><h1 style="color: white;">Magazine</h1></center>
+    </header>
+
+    <div style="float:right;height: 100%; width: 25%;">
+      <center><h4 style="color:white;">Current News</h4></center>
+      <div style = "height: 25%;width: 100%;">
+
+          <p style="background-color:black;text-align: center; color: white;"> <span>Stone pelting cases decline in Jammu and Kashmir due to NIA: Rajnath Singh</span></p>
+          <h5 style="color: lavender;"><span>The Opposition UDF staged a walkout in the Assembly on Friday, holding the government responsible for the serious flaws in the preparation of the priority list and ration cards under the National Food Safety Act.Leader of the Opposition leaders.</span></h3>
+          <center>
+            <img src="back.jpg" alt="Mountain View" style="width:100px;height:50px;">
+          </center>
+      </div>
+      <div style = "height: 20%;width: 100%;">
+
+          <p style="background-color:black;text-align: center; color: white;"> <span>Stone pelting cases decline in Jammu and Kashmir due to NIA: Rajnath Singh</span></p>
+          <h5 style="color: lavender;"><span>The Opposition UDF staged a walkout in the Assembly on Friday, holding the government responsible for the serious flaws in the preparation of the priority list and ration cards under the National Food Safety Act.Leader of the Opposition leaders.</span></h3>
+            <center>
+              <img src="back.jpg" alt="Mountain View" style="width:100px;height:50px;">
+            </center>
+      </div>
+      <div style = "height: 35%;width: 100%;">
+
+          <p style="background-color:black;text-align: center; color: white;"> <span>Stone pelting cases decline in Jammu and Kashmir due to NIA: Rajnath Singh</span></p>
+          <h5 style="color: lavender;"><span>The Opposition UDF staged a walkout in the Assembly on Friday, holding the government responsible for the serious flaws in the preparation of the priority list and ration cards under the National Food Safety Act.Leader of the Opposition leaders.</span></h3>
+            <center>
+              <img src="back.jpg" alt="Mountain View" style="width:100px;height:50px;">
+            </center>
+      </div>
+      <div style = "height: 20%;width: 100%;">
+
+          <p style="background-color:black;text-align: center; color: white;"> <span>Stone pelting cases decline in Jammu and Kashmir due to NIA: Rajnath Singh</span></p>
+          <h5 style="color: lavender;"><span>The Opposition UDF staged a walkout in the Assembly on Friday, holding the government responsible for the serious flaws in the preparation of the priority list and ration cards under the National Food Safety Act.Leader of the Opposition leaders.</span></h3>
+            <center>
+              <img src="back.jpg" alt="Mountain View" style="width:100px;height:50px;">
+            </center>
+      </div>
     </div>
-    
-  </body>
-</html>
+
+  <div style="height:400px;width:74%">
+
+    	<center><h2 style="color: white;">National News</h2></center>
+
+    <div style="float: left;width:30%; margin:12px; height:300px;">
+     <h3 style="background-color:black; color:white;"><span>Stone pelting cases decline in Jammu and Kashmir due to NIA: Rajnath Singh</span></h3>
+     <h5 style="color: lavender;"><span>The Opposition UDF staged a walkout in the Assembly on Friday, holding the government responsible for the serious flaws in the preparation of the priority list and ration cards under the National Food Safety Act.Leader of the Opposition leaders.</span></h3>
+       <center>
+         <img src="back.jpg" alt="Mountain View" style="width:200px;height:100px;">
+       </center>
+    </div>
+    <div style="float: left;width:30%;margin:12px; height:300px;">
+     <h3 style="background-color:black; color:white;"> <span>Stone pelting cases decline in Jammu and Kashmir due to NIA: Rajnath Singh</span></h3>
+     <h5 style="color: lavender;"><span>The Opposition UDF staged a walkout in the Assembly on Friday, holding the government responsible for the serious flaws in the preparation of the priority list and ration cards under the National Food Safety Act.Leader of the Opposition leaders.</span></h3>
+       <center>
+         <img src="back.jpg" alt="Mountain View" style="width:200px;height:100px;">
+       </center>
+    </div>
+    <div style="float: left;width:30%;margin:12px; height:300px;">
+     <h3 style="background-color:black; color:white;"> <span>Stone pelting cases decline in Jammu and Kashmir due to NIA: Rajnath Singh</span></h3>
+    <h5 style="color: lavender;"><span>The Opposition UDF staged a walkout in the Assembly on Friday, holding the government responsible for the serious flaws in the preparation of the priority list and ration cards under the National Food Safety Act.Leader of the Opposition leaders.</span></h3>
+      <center>
+        <img src="back.jpg" alt="Mountain View" style="width:200px;height:100px;">
+      </center>
+    </div>
+    </div>
+    <br>
+
+    <div style="width:74%;height: 400px">
+
+    <center><h2 style="color: white;"> International News</h2></center>
+    <div style="float: left;width:30%;margin:12px; height:300px;">
+     <h3 style="background-color:black; color:white;"> <span>Stone pelting cases decline in Jammu and Kashmir due to NIA: Rajnath Singh</span></h3>
+     <h5 style="color: lavender;"><span>The Opposition UDF staged a walkout in the Assembly on Friday, holding the government responsible for the serious flaws in the preparation of the priority list and ration cards under the National Food Safety Act.Leader of the Opposition leaders.</span></h3>
+       <center>
+         <img src="back.jpg" alt="Mountain View" style="width:200px;height:100px;">
+       </center>
+    </div>
+    <div style="float: left;width:30%;margin:12px; height:300px;">
+     <h3 style="background-color:black; color:white;"> <span>Stone pelting cases decline in Jammu and Kashmir due to NIA: Rajnath Singh</span></h3>
+     <h5 style="color: lavender;"><span>The Opposition UDF staged a walkout in the Assembly on Friday, holding the government responsible for the serious flaws in the preparation of the priority list and ration cards under the National Food Safety Act.Leader of the Opposition leaders.</span></h3>
+       <center>
+         <img src="back.jpg" alt="Mountain View" style="width:200px;height:100px;">
+       </center>
+    </div>
+    <div style="float: left;width:30%;margin:12px; height:300px;">
+     <h3 style="background-color:black; color:white;"> <span>Stone pelting cases decline in Jammu and Kashmir due to NIA: Rajnath Singh</span></h3>
+     <h5 style="color: lavender;"><span>The Opposition UDF staged a walkout in the Assembly on Friday, holding the government responsible for the serious flaws in the preparation of the priority list and ration cards under the National Food Safety Act.Leader of the Opposition leaders.</span></h3>
+       <center>
+         <img src="back.jpg" alt="Mountain View" style="width:200px;height:100px;">
+       </center>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div style="width:100%;height: 300px">
+
+    <center><h2 style="color: white;"> Entertainment</h2></center>
+    <div style="float: left;width:30%;margin:12px;">
+     <h3 style="background-color:black; color:white;"> Music</h3>
+     <ul>
+      <li><h5 style="color:lavender;">Ed Sheeran</li></h5>
+      <li><h5 style="color:lavender;">Jamie Scott</li></h5>
+      <li><h5 style="color:lavender;">Snow Pstrol</li></h5>
+    </ul>
+
+    </div>
+    <div style="float: left;width:30%;margin:12px;">
+     <h3 style="background-color:black; color:white;"> Movies</h3>
+     <ul>
+      <li><h5 style="color:lavender;">Ed Sheeran</li></h5>
+      <li><h5 style="color:lavender;">Jamie Scott</li></h5>
+      <li><h5 style="color:lavender;">Snow Pstrol</li></h5>
+    </ul>
+    </div>
+    <div style="float: left;width:30%;margin:12px;">
+     <h3 style="background-color:black; color:white;"> Theater</h3>
+     <ul>
+      <li><h5 style="color:lavender;">Ed Sheeran</li></h5>
+      <li><h5 style="color:lavender;">Jamie Scott</li></h5>
+      <li><h5 style="color:lavender;">Snow Pstrol</li></h5>
+    </ul>
+    </div>
+  </div>
