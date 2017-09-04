@@ -1,0 +1,671 @@
+<!DOCTYPE html">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+    <title>Not Quora</title>
+    <style>
+    /*Fixed navigation bar*/
+      nav.fixed-nav-bar{
+        position: fixed;
+        overflow: hidden;
+        z-index: 9999;
+        width: 100%;
+        height: auto;
+        top:60px;
+        left:0px;
+        background-color: #424242;
+        margin-right: auto;
+      	margin-left: auto;
+      }
+      nav.fixed-nav-bar ul{
+          list-style-type: none;
+          margin-left: 540px;
+      }
+      nav.fixed-nav-bar li a{
+        display: block;
+        float: left;
+        background-color:#424242;
+        color: white;
+        padding: 8px 16px;
+        text-decoration: none;
+        font-family: sans-serif;
+      }
+      nav.fixed-nav-bar li a.active {
+          background-color:#757575;
+          color: white;
+      }
+      nav.fixed-nav-bar li a:hover:not(.active) {
+        background-color:#757575;
+        color: black;
+      }
+
+      /*Title bar*/
+      .TitleBar{
+        position: fixed;
+        overflow: hidden;
+        z-index: 9999;
+        width: 100%;
+        height:60px;
+        left:0px;
+        top:0px;
+        background-color: #424242;
+      }
+
+      /*Search Button*/
+      .TitleBar input[type=text] {
+        width: 130px;
+        box-sizing: border-box;
+        border: 2px solid #ccc;
+        border-radius: 4px;
+        font-size: 13px;
+        background-color: white;
+        background-image:'searchicon.png';
+        background-position: 10px 10px;
+        background-repeat: no-repeat;
+        padding: 12px 20px 12px 40px;
+        -webkit-transition: width 0.4s ease-in-out;
+        transition: width 0.4s ease-in-out;
+        }
+        .TitleBar input[type=text]:focus {
+            width: 280px;
+        }
+        /*Trending Posts*/
+        aside.trending{
+          width: 300px;
+          position: fixed;
+          height:550px;
+          left:10px;
+          margin-top: 150px;
+          margin-left: 30px;
+          float:left;
+        }
+        aside.trending div{
+          width: auto;
+          height: auto;
+          margin: 10px;
+          color: #696969;
+          margin-left: 1px;
+          font-family:Arial, Helvetica, sans-serif;
+          font-size:15px;
+        }
+        /*Main body and cards*/
+        section.main{
+          width:55%;
+          height:auto;
+          margin-left: 360px;
+          margin-top: 150px;
+          float:left;
+        }
+        section.main div{
+          width:90%;
+          height:350px;
+          margin-top: 20px;
+          background-color: white;
+          position:relative;
+        }
+        section.main div section.content{
+          float:left;
+          margin: 10px;
+          margin-left: 0px;
+          height:275px;
+          width:80%;
+        }
+        section.main div section div.info{
+          float:left;
+          margin:10px;
+          height:70px;
+          width:80%;
+          font-size: 1em;
+          font-weight: bold;
+          font-family: cursive;
+          Text-align:left;
+        }
+        section.main div section div.ques{
+          float:left;
+          margin:10px;
+          height:50px;
+          width:90%;
+          font-size: 1em;
+          font-weight: 400px;
+          font: sans-serif;
+          Text-align:left;
+        }
+        section.main div section div.ans{
+          float:left;
+          margin:10px;
+          height:90px;
+          width:90%;
+          font-size: 1em;
+          font-weight: 300px;
+          font: sans-serif;
+          Text-align:left;
+
+        }
+        section.main div section div.icon{
+
+        }
+        /*Notification*/
+        aside.notification{
+          width: 300px;
+          position: fixed;
+          height:550px;
+          margin-top: 150px;
+          margin-left: 1250px;
+          float:right;
+        }
+        aside.notification div{
+          width: auto;
+          height: auto;
+          margin: 10px;
+          color: #696969;
+          margin-left: 1px;
+          font-family:Arial, Helvetica, sans-serif;
+          font-size:15px;
+        }
+        /*Profile Pic*/
+        .circle {
+          width: 90px;
+          height: 90px;
+          float: left;
+          margin: 10px;
+        }
+
+        /*MAP*/
+        #map {
+          margin-top: 100px;
+          height: 80%;
+        }
+        /* Optional: Makes the sample page fill the window. */
+        #description {
+          font-family: Roboto;
+          font-size: 15px;
+          font-weight: 300;
+        }
+
+        #infowindow-content .title {
+          font-weight: bold;
+        }
+
+        #infowindow-content {
+          display: none;
+        }
+
+        #map #infowindow-content {
+          display: inline;
+        }
+
+        .pac-card {
+          margin: 10px 10px 0 0;
+          border-radius: 2px 0 0 2px;
+          box-sizing: border-box;
+          -moz-box-sizing: border-box;
+          outline: none;
+          box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+          background-color: #fff;
+          font-family: Roboto;
+        }
+
+        #pac-container {
+          padding-bottom: 12px;
+          margin-right: 12px;
+        }
+
+        .pac-controls {
+          display: inline-block;
+          padding: 5px 11px;
+        }
+
+        .pac-controls label {
+          font-family: Roboto;
+          font-size: 13px;
+          font-weight: 300;
+        }
+
+        #pac-input {
+          background-color: #fff;
+          font-family: Roboto;
+          font-size: 15px;
+          font-weight: 300;
+          margin-left: 12px;
+          padding: 0 11px 0 13px;
+          text-overflow: ellipsis;
+          width: 400px;
+        }
+
+        #pac-input:focus {
+          border-color: #4d90fe;
+        }
+
+        #title {
+          color: #fff;
+          background-color: #4d90fe;
+          font-size: 25px;
+          font-weight: 500;
+          padding: 6px 12px;
+        }
+
+        .show{display:block;}
+        .hide{display:none;}
+
+    </style>
+
+    <script>
+    function change(id){
+      if(id==4){
+        document.getElementById("Map_Page").className="show";
+        document.getElementById("Home_Page").className="hide";
+      }
+      if(id==1){
+        document.getElementById("Map_Page").className="hide";
+        document.getElementById("Home_Page").className="show";
+      }
+
+    }
+    function initMap() {
+      var map = new google.maps.Map(document.getElementById('map'), {
+        center: {lat: 23.725011735951796, lng: 78.486328125},
+        zoom: 3
+      });
+      var card = document.getElementById('pac-card');
+      var input = document.getElementById('pac-input');
+
+      map.controls[google.maps.ControlPosition.TOP_RIGHT].push(card);
+
+      var autocomplete = new google.maps.places.Autocomplete(input);
+
+      var infowindow = new google.maps.InfoWindow();
+      var infowindowContent = document.getElementById('infowindow-content');
+      infowindow.setContent(infowindowContent);
+      var marker = new google.maps.Marker({map: map,anchorPoint: new google.maps.Point(0, -29)});
+
+      autocomplete.addListener('place_changed', function() {
+        infowindow.close();
+        marker.setVisible(false);
+        var place = autocomplete.getPlace();
+        if (!place.geometry) {
+          // User entered the name of a Place that was not suggested and
+          // pressed the Enter key, or the Place Details request failed.
+          window.alert("No details available for input: '" + place.name + "'");
+          return;
+        }
+
+        // If the place has a geometry, then present it on a map.
+        if (place.geometry.viewport) {
+          map.fitBounds(place.geometry.viewport);
+        } else {
+          map.setCenter(place.geometry.location);
+          map.setZoom(17);  // Why 17? Because it looks good.
+        }
+        marker.setPosition(place.geometry.location);
+        marker.setVisible(true);
+
+        var address = '';
+        if (place.address_components) {
+          address = [
+            (place.address_components[0] && place.address_components[0].short_name || ''),
+            (place.address_components[1] && place.address_components[1].short_name || ''),
+            (place.address_components[2] && place.address_components[2].short_name || '')
+          ].join(' ');
+        }
+        infowindowContent.children['place-icon'].src = place.icon;
+        infowindowContent.children['place-name'].textContent = place.name;
+        infowindowContent.children['place-address'].textContent = address;
+        infowindow.open(map, marker);
+
+      });
+
+
+      google.maps.event.addListener(map, 'click', function(event) {
+        var geocoder = new google.maps.Geocoder();
+        geocoder.geocode({
+          'latLng': event.latLng
+        }, function(results, status) {
+          if (status == google.maps.GeocoderStatus.OK) {
+            if (results[0]) {
+              for (var i=0; i < results[0].address_components.length; i++) {
+                for (var j=0; j < results[0].address_components[i].types.length; j++) {
+                  if (results[0].address_components[i].types[j] == "country") {
+                    country = results[0].address_components[i];
+                    if(confirm("Proceed with setting your location to "+country.long_name+"?")){
+                      document.getElementById("Map_Page").className="hide"
+                      document.getElementById("Home_Page").className="flex-container show"
+                    }
+                  }
+                }
+              }
+
+            }
+          }
+        });
+      });
+    }
+  </script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAtPcQtf79ipRgOjrF6pqYk5tRW2nIZLFo&libraries=places&callback=initMap"
+    async defer>
+  </script>
+  </head>
+  <body background="noise.jpg">
+    <div class="TitleBar">
+        <h2 style="font-family: Impact, Charcoal, sans-serif; float:left; margin-left:10px;color:white;">Not Quora</h2>
+        <input type="text" name="search" placeholder="Search.." style="float:right;margin-top:13px; margin-right:5px;">
+    </div>
+
+    <nav class="fixed-nav-bar">
+      <ul>
+        <li><a href=# onclick="change(1);">Home</a></li>
+        <li><a href=#>Subscriptions</a></li>
+        <li><a href=#>Profile</a></li>
+        <li><a href=# id="Location_Link" onclick="change(4);">Location</a></li>
+      </ul>
+    </nav>
+    <div class="hide" id="Home_Page">
+      <aside class="trending">
+        <center>
+          <h2>Trending Topics</h4>
+          <div>
+            <h4><a href=#>What is your Deloitte interview experience?</a></h4>
+          </div>
+          <div>
+            <h4><a href=#>Romelu Lukaku me to Manchester United</a></h4>
+          </div>
+          <div>
+            <h4><a href=#>Was Neymar not worth his price?</a></h4>
+          </div>
+          <div>
+            <h4><a href=#>Why can't China mind their own f**king business?</a></h4>
+          </div>
+          <div>
+            <h4><a href=#>Is it too late to apologize?</a></h4>
+          </div>
+          <div>
+            <h4><a href=#>Will Airtel market crumble because of Jio?</a></h4>
+          </div>
+          <div>
+            <h4><a href=#>Is HTML, CSS a dying field?</a></h4>
+          </div>
+          <div>
+            <h4><a href=#>Why don't colleges teach subjects more relevant to our time?</a></h4>
+          </div>
+          <div>
+            <h4><a href=#>Was software project management neccessary?</a></h4>
+          </div>
+        </center>
+      </aside>
+      <section class="main">
+        <center>
+        <div>
+          <img class="circle" src="image.jpg" alt="smiley face">
+          <input type="button"  value="Answer" style="position:absolute; bottom: 0;right: 0;background-color:#424242; color:white;margin:20px; width:100px;
+          height:30px; font-size:16px;">
+          <section class="content">
+            <div class="info">
+              <p style="margin-top:0px;">Samarth Bharti</br>
+                B.tech Computer Science, Shiv Nadar University.
+              </p>
+            </div>
+            <div class="ques">
+              <p style="margin-top:0px;">Samarth Bharti</br>
+                B.tech Computer Science, Shiv Nadar University.
+              </p>
+            </div>
+            <div class="ans">
+              <p style="margin-top:0px;">Samarth Bharti</br>
+                B.tech Computer Science, Shiv Nadar University.
+              </p>
+            </div>
+          </section>
+        </div>
+        <div>
+          <img class="circle" src="image.jpg" alt="smiley face">
+          <input type="button"  value="Answer" style="position:absolute; bottom: 0;right: 0;background-color:#424242; color:white;margin:20px; width:100px;
+          height:30px; font-size:16px;">
+          <section class="content">
+            <div class="info">
+              <p style="margin-top:0px;">Samarth Bharti</br>
+                B.tech Computer Science, Shiv Nadar University.
+              </p>
+            </div>
+            <div class="ques">
+              <p style="margin-top:0px;">Samarth Bharti</br>
+                B.tech Computer Science, Shiv Nadar University.
+              </p>
+            </div>
+            <div class="ans">
+              <p style="margin-top:0px;">Samarth Bharti</br>
+                B.tech Computer Science, Shiv Nadar University.
+              </p>
+            </div>
+          </section>
+        </div>
+        <div>
+          <img class="circle" src="image.jpg" alt="smiley face">
+          <input type="button"  value="Answer" style="position:absolute; bottom: 0;right: 0;background-color:#424242; color:white;margin:20px; width:100px;
+          height:30px; font-size:16px;">
+          <section class="content">
+            <div class="info">
+              <p style="margin-top:0px;">Samarth Bharti</br>
+                B.tech Computer Science, Shiv Nadar University.
+              </p>
+            </div>
+            <div class="ques">
+              <p style="margin-top:0px;">Samarth Bharti</br>
+                B.tech Computer Science, Shiv Nadar University.
+              </p>
+            </div>
+            <div class="ans">
+              <p style="margin-top:0px;">Samarth Bharti</br>
+                B.tech Computer Science, Shiv Nadar University.
+              </p>
+            </div>
+          </section>
+        </div>
+        <div>
+          <img class="circle" src="image.jpg" alt="smiley face">
+          <input type="button"  value="Answer" style="position:absolute; bottom: 0;right: 0;background-color:#424242; color:white;margin:20px; width:100px;
+          height:30px; font-size:16px;">
+          <section class="content">
+            <div class="info">
+              <p style="margin-top:0px;">Samarth Bharti</br>
+                B.tech Computer Science, Shiv Nadar University.
+              </p>
+            </div>
+            <div class="ques">
+              <p style="margin-top:0px;">Samarth Bharti</br>
+                B.tech Computer Science, Shiv Nadar University.
+              </p>
+            </div>
+            <div class="ans">
+              <p style="margin-top:0px;">Samarth Bharti</br>
+                B.tech Computer Science, Shiv Nadar University.
+              </p>
+            </div>
+          </section>
+        </div>
+        <div>
+          <img class="circle" src="image.jpg" alt="smiley face">
+          <input type="button"  value="Answer" style="position:absolute; bottom: 0;right: 0;background-color:#424242; color:white;margin:20px; width:100px;
+          height:30px; font-size:16px;">
+          <section class="content">
+            <div class="info">
+              <p style="margin-top:0px;">Samarth Bharti</br>
+                B.tech Computer Science, Shiv Nadar University.
+              </p>
+            </div>
+            <div class="ques">
+              <p style="margin-top:0px;">Samarth Bharti</br>
+                B.tech Computer Science, Shiv Nadar University.
+              </p>
+            </div>
+            <div class="ans">
+              <p style="margin-top:0px;">Samarth Bharti</br>
+                B.tech Computer Science, Shiv Nadar University.
+              </p>
+            </div>
+          </section>
+        </div>
+        <div>
+          <img class="circle" src="image.jpg" alt="smiley face">
+          <input type="button"  value="Answer" style="position:absolute; bottom: 0;right: 0;background-color:#424242; color:white;margin:20px; width:100px;
+          height:30px; font-size:16px;">
+          <section class="content">
+            <div class="info">
+              <p style="margin-top:0px;">Samarth Bharti</br>
+                B.tech Computer Science, Shiv Nadar University.
+              </p>
+            </div>
+            <div class="ques">
+              <p style="margin-top:0px;">Samarth Bharti</br>
+                B.tech Computer Science, Shiv Nadar University.
+              </p>
+            </div>
+            <div class="ans">
+              <p style="margin-top:0px;">Samarth Bharti</br>
+                B.tech Computer Science, Shiv Nadar University.
+              </p>
+            </div>
+          </section>
+        </div>
+        <div>
+          <img class="circle" src="image.jpg" alt="smiley face">
+          <input type="button"  value="Answer" style="position:absolute; bottom: 0;right: 0;background-color:#424242; color:white;margin:20px; width:100px;
+          height:30px; font-size:16px;">
+          <section class="content">
+            <div class="info">
+              <p style="margin-top:0px;">Samarth Bharti</br>
+                B.tech Computer Science, Shiv Nadar University.
+              </p>
+            </div>
+            <div class="ques">
+              <p style="margin-top:0px;">Samarth Bharti</br>
+                B.tech Computer Science, Shiv Nadar University.
+              </p>
+            </div>
+            <div class="ans">
+              <p style="margin-top:0px;">Samarth Bharti</br>
+                B.tech Computer Science, Shiv Nadar University.
+              </p>
+            </div>
+          </section>
+        </div>
+        <div>
+          <img class="circle" src="image.jpg" alt="smiley face">
+          <input type="button"  value="Answer" style="position:absolute; bottom: 0;right: 0;background-color:#424242; color:white;margin:20px; width:100px;
+          height:30px; font-size:16px;">
+          <section class="content">
+            <div class="info">
+              <p style="margin-top:0px;">Samarth Bharti</br>
+                B.tech Computer Science, Shiv Nadar University.
+              </p>
+            </div>
+            <div class="ques">
+              <p style="margin-top:0px;">Samarth Bharti</br>
+                B.tech Computer Science, Shiv Nadar University.
+              </p>
+            </div>
+            <div class="ans">
+              <p style="margin-top:0px;">Samarth Bharti</br>
+                B.tech Computer Science, Shiv Nadar University.
+              </p>
+            </div>
+          </section>
+        </div>
+        <div>
+          <img class="circle" src="image.jpg" alt="smiley face">
+          <input type="button"  value="Answer" style="position:absolute; bottom: 0;right: 0;background-color:#424242; color:white;margin:20px; width:100px;
+          height:30px; font-size:16px;">
+          <section class="content">
+              <div class="info">
+                <p style="margin-top:0px;">Samarth Bharti</br>
+                  B.tech Computer Science, Shiv Nadar University.
+                </p>
+              </div>
+              <div class="ques">
+                <p style="margin-top:0px;">Samarth Bharti</br>
+                  B.tech Computer Science, Shiv Nadar University.
+                </p>
+              </div>
+              <div class="ans">
+                <p style="margin-top:0px;">Samarth Bharti</br>
+                  B.tech Computer Science, Shiv Nadar University.
+                </p>
+              </div>
+            </section>
+        </div>
+        <div>
+          <img class="circle" src="image.jpg" alt="smiley face">
+          <input type="button"  value="Answer" style="position:absolute; bottom: 0;right: 0;background-color:#424242; color:white;margin:20px; width:100px;
+          height:30px; font-size:16px;">
+          <section class="content">
+            <div class="info">
+              <p style="margin-top:0px;">Samarth Bharti</br>
+                B.tech Computer Science, Shiv Nadar University.
+              </p>
+            </div>
+            <div class="ques">
+              <p style="margin-top:0px;">Samarth Bharti</br>
+                B.tech Computer Science, Shiv Nadar University.
+              </p>
+            </div>
+            <div class="ans">
+              <p style="margin-top:0px;">Samarth Bharti</br>
+                B.tech Computer Science, Shiv Nadar University.
+              </p>
+            </div>
+          </section>
+        </div>
+      </center>
+      </section>
+      <aside class="notification">
+        <center>
+        <h2>Notifications</h4>
+        <div>
+          <h4>What is your Deloitte interview experience?</h4>
+        </div>
+        <div>
+          <h4>What is your Deloitte interview experience?</h4>
+        </div>
+        <div>
+          <h4>What is your Deloitte interview experience?</h4>
+        </div>
+        <div>
+          <h4>What is your Deloitte interview experience?</h4>
+        </div>
+        <div>
+          <h4>What is your Deloitte interview experience?</h4>
+        </div>
+        <div>
+          <h4>What is your Deloitte interview experience?</h4>
+        </div>
+        <div>
+          <h4>What is your Deloitte interview experience?</h4>
+        </div>
+        <div>
+          <h4>What is your Deloitte interview experience?</h4>
+        </div>
+        <div>
+          <h4>What is your Deloitte interview experience?</h4>
+        </div>
+      </center>
+      </aside>
+    </div>
+    <div class="show" id="Map_Page" style="margin-top:120px;">
+      <div class="pac-card" id="pac-card">
+        <div>
+          <div id="title">
+            Click on preffered location
+          </div>
+        </div>
+        <div id="pac-container">
+          <input id="pac-input" type="text" placeholder="Search for a location" style="margin-top:10px;">
+        </div>
+      </div>
+      <div id="map"></div>
+      <div id="infowindow-content">
+        <img src="" width="16" height="16" id="place-icon">
+        <span id="place-name"  class="title"></span><br>
+        <span id="place-address"></span>
+      </div>
+    </div>
+  </body>
+</html>

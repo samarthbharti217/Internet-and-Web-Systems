@@ -1,0 +1,261 @@
+<!DOCTYPE html">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+  <title>Shapes Perimenter and Area</title>
+  <style>
+    header{
+        padding: 1em;
+        color: white;
+        background-color: #667292;
+        clear: left;
+        text-align: center;
+    }
+    body{
+    Margin: 0px;
+    background-size: 100%;
+    Text-align: center;
+       }
+    nav.topnav{
+      background-color: #8d9db6;
+      overflow: hidden;
+      width=100%;
+      margin-right: auto;
+      margin-left: auto;
+    }
+    nav.topnav ul{
+        list-style-type: none;
+    }
+    nav.topnav li input {
+      display: block;
+      float: left;
+      background-color:#8d9db6;
+      color: #f1e3dd;
+      padding: 8px 16px;
+      margin-left: 170px;
+      text-decoration: none;
+    }
+    nav.topnav li input.active {
+        background-color:black;
+        color: white;
+    }
+    nav.topnav li input:hover:not(.active) {
+      background-color:#667292;
+      color: #f1e3dd;
+    }
+    #container { }
+    #big {width:100%; height: 130px; display:inline-block ; vertical-align:middle; }
+    #small {width:40%; height: 350px; margin-right: auto; margin-left: auto;}
+  </style>
+  <script>
+    function showImg( id ) {
+          if(id==1){
+            obj = document.getElementById( "rectangle_form").className='hide';
+            obj=document.getElementById( "square_form" ).className='hide';
+            obj=document.getElementById( "triangle_form" ).className='hide';
+            obj=document.getElementById( "circle_form" ).className='show';
+            obj=document.getElementById( "hexagon_form" ).className='hide';
+
+            var canvas=document.getElementById("Canvas");
+            var ctx = canvas.getContext('2d');
+            ctx.strokeStyle="#8d9db6";
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            var X = canvas.width / 2;
+            var Y = canvas.height / 2;
+            var R = 120;
+            ctx.beginPath();
+            ctx.arc(X, Y, R, 0, 2 * Math.PI, false);
+            ctx.lineWidth = 3;
+            ctx.stroke();
+          }
+          else if(id==2){
+            obj = document.getElementById( "square_form").className='hide';
+            obj=document.getElementById( "circle_form" ).className='hide';
+            obj=document.getElementById( "triangle_form" ).className='hide';
+            obj=document.getElementById( "rectangle_form" ).className='show';
+            obj=document.getElementById( "hexagon_form" ).className='hide';
+
+            var canvas=document.getElementById("Canvas");
+            var ctx = canvas.getContext('2d');
+            ctx.strokeStyle="#8d9db6";
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            var sWidth = canvas.width;
+            var sHeight = canvas.height;
+            ctx.beginPath();
+       	    ctx.moveTo(50, 50);
+       	    ctx.lineTo(350, 50);
+            ctx.lineTo(350, 250);
+    	      ctx.lineTo(50, 250);
+    	      ctx.lineTo(50, 50);
+    	      ctx.stroke();
+          }
+          else if(id==3){
+            obj = document.getElementById( "rectangle_form").className='hide';
+            obj=document.getElementById( "circle_form" ).className='hide';
+            obj=document.getElementById( "triangle_form" ).className='hide';
+            obj=document.getElementById( "square_form" ).className='show';
+            obj=document.getElementById( "hexagon_form" ).className='hide';
+
+            var canvas=document.getElementById("Canvas");
+            var ctx = canvas.getContext('2d');
+            ctx.strokeStyle="#8d9db6";
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            var sWidth = canvas.width;
+            var sHeight = canvas.height;
+            ctx.beginPath();
+   	        ctx.moveTo(100, 60);
+   	        ctx.lineTo(300, 60);
+            ctx.lineTo(300, 260);
+      	    ctx.lineTo(100, 260);
+      	    ctx.lineTo(100, 60);
+
+            ctx.stroke();
+          }
+          else if(id==4){
+            obj = document.getElementById( "rectangle_form").className='hide';
+            obj=document.getElementById( "square_form" ).className='hide';
+            obj=document.getElementById( "circle_form" ).className='hide';
+            obj=document.getElementById( "triangle_form" ).className='show';
+            obj=document.getElementById( "hexagon_form" ).className='hide';
+
+            var canvas=document.getElementById("Canvas");
+            var ctx = canvas.getContext('2d');
+            ctx.strokeStyle="#8d9db6";
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            var sWidth = canvas.width;
+            var sHeight = canvas.height;
+            ctx.beginPath();
+       	    ctx.moveTo(200, 50);
+       	    ctx.lineTo(400, 300);
+            ctx.lineTo(0, 300);
+	          ctx.lineTo(200, 50);
+            ctx.stroke();
+          }
+          else if(id==5){
+            obj = document.getElementById( "rectangle_form").className='hide';
+            obj=document.getElementById( "square_form" ).className='hide';
+            obj=document.getElementById( "circle_form" ).className='hide';
+            obj=document.getElementById( "triangle_form" ).className='hide';
+            obj=document.getElementById( "hexagon_form" ).className='show';
+
+            var canvas=document.getElementById("Canvas");
+            var ctx = canvas.getContext('2d');
+            ctx.strokeStyle="#8d9db6";
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.beginPath();
+            ctx.moveTo(200, 0);
+            ctx.lineTo(300, 80);
+            ctx.lineTo(300, 230);
+            ctx.lineTo(200, 300);
+            ctx.lineTo(200, 300);
+            ctx.lineTo(100, 230);
+            ctx.lineTo(100,80);
+            ctx.lineTo(200, 0);
+            ctx.stroke();
+          }
+    }
+
+
+    function calculate( id ) {
+          if(id==1){
+            var radius=parseFloat(document.getElementById("radius").value)
+            document.getElementById("c_p").value=3.14*2*radius
+            document.getElementById("c_a").value=3.14*radius*radius
+          }
+          else if(id==2){
+            var length=parseFloat(document.getElementById("length").value)
+            var breadth=parseFloat(document.getElementById("breadth").value)
+            document.getElementById("r_p").value=2*(length+breadth)
+            document.getElementById("r_a").value=length*breadth
+          }
+          else if(id==3){
+            var side=parseFloat(document.getElementById("side").value)
+            document.getElementById("s_p").value=4*side
+            document.getElementById("s_a").value=side*side
+          }
+          else if(id==4){
+            var s1=parseFloat(document.getElementById("side1").value)
+            var s2=parseFloat(document.getElementById("side2").value)
+            var s3=parseFloat(document.getElementById("side3").value)
+            document.getElementById("t_p").value=s1+s2+s3
+            var s=(s1+s2+s3)/2
+            var b=s*(s-s1)*(s-s2)*(s-s3)
+            document.getElementById("t_a").value=Math.sqrt(b)
+          }
+          else if(id==5){
+            var side=parseFloat(document.getElementById("regside").value)
+            document.getElementById("h_p").value=6*side
+            document.getElementById("h_a").value=2.5981*side*side
+          }
+    }
+
+    </script>
+    <style type="text/css">
+       .show{display:block;}
+       .hide{display:none;}
+    </style>
+  </head>
+  <body background="noise.jpg">
+    <header>
+       <h1>Shapes</h1>
+    </header>
+
+    <nav class="topnav">
+        <ul>
+          <li><input type="button" onclick="showImg(1);" value="Circle"></li>
+          <li><input type="button" onclick="showImg(2);" value="Rectangle"></li>
+          <li><input type="button" onclick="showImg(3);" value= "Square"></li>
+          <li><input type="button" onclick="showImg(4)" value= "Triangle"></li>
+          <li><input type="button" onclick="showImg(5)" value="Hexagon"></li>
+        </ul>
+    </nav>
+
+    <div id="container">
+        <div id="big">
+          <div id="circle_form" class="hide" style="margin:30px;">
+            <div><input type="text" id="radius" placeholder="Radius" ></div><br>
+             <input type="text" name="textbox" id="c_p" readonly="true" placeholder=Perimeter >
+             <input type="text" name="textbox1" id="c_a" readonly="true" placeholder=Area><br><br>
+              <input type="button" onclick="calculate(1);" value= "Find">
+          </div>
+
+          <div id="rectangle_form" class="hide" style="margin:30px;">
+            <div><input type="text" id="length" placeholder=Length>
+            <input type="text" id="breadth" placeholder=Breadth></div>
+            <input type="text" name="textbox" id="r_p" readonly="true" placeholder=Perimeter>
+            <input type="text" name="textbox1" id="r_a" readonly="true" placeholder=Area><br><br>
+            <input type="button" onclick="calculate(2);" value= "Find">
+          </div>
+
+          <div id="triangle_form" class="hide" style="margin:30px;">
+            <div> <input type="text" id="side1" placeholder=Side_1>
+            <input type="text" id="side2" placeholder=Side_2>
+            <input type="text" id="side3" placeholder=Side_3></div>
+            <input type="text" name="textbox" id="t_p" readonly="true" placeholder=Perimeter>
+            <input type="text" name="textbox1" id="t_a" readonly="true" placeholder=Area><br><br>
+            <input type="button" onclick="calculate(4);" value= "Find">
+          </div>
+
+          <div id="square_form" class="hide" style="margin:30px;">
+            <input type="text" id="side" placeholder=Length><br><br>
+            <input type="text" name="textbox" id="s_p" readonly="true" placeholder=Perimeter>
+            <input type="text" name="textbox1" id="s_a" readonly="true" placeholder=Area><br><br>
+            <input type="button" onclick="calculate(3);" value= "Find">
+          </div>
+
+          <div id="hexagon_form" class="hide" style="margin:30px;">
+            <input type="text" id="regside" placeholder=Side>
+            <input type="text" name="textbox" id="h_p" readonly="true" placeholder=Perimeter>
+            <input type="text" name="textbox1" id="h_a" readonly="true" placeholder=Area><br><br>
+            <input type="button" onclick="calculate(5);" value= "Find">
+          </div>
+
+        </div>
+        <div id="small">
+          <canvas id="Canvas" width="400" height="300">
+              Your browser does not support the HTML5 canvas tag.</canvas>
+        </div>
+    </div>
+    </body>
+</html>
