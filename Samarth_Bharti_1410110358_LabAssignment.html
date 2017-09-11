@@ -1,0 +1,115 @@
+<!DOCTYPE html">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link href='http://fonts.googleapis.com/css?family=Arizonia' rel='stylesheet' type='text/css'>
+    <title>CSS Properties</title>
+    <style>
+
+      nav.fixed-nav-bar{
+        position: relative;
+        overflow: hidden;
+        z-index: 9999;
+        width: 100%;
+        height: auto;
+        top:60px;
+        left:0px;
+        background-color: #424242;
+        margin-right: auto;
+        margin-left: auto;
+      }
+      nav.fixed-nav-bar ul{
+          list-style-type: none;
+      }
+      nav.fixed-nav-bar li a{
+        display: block;
+        float: left;
+        background-color:#424242;
+        color: white;
+        padding: 8px 16px;
+        text-decoration: none;
+        font-family: sans-serif;
+      }
+      nav.fixed-nav-bar li a.active {
+          background-color:#757575;
+          color: white;
+      }
+      nav.fixed-nav-bar li a:hover:not(.active) {
+        background-color:#757575;
+        color: black;
+      }
+      div.show_info{
+        position: absolute;
+        border: 1px solid red;
+        padding: 1em 2em;
+        display: none;
+      }
+      /*Title bar*/
+      .TitleBar{
+        position: fixed;
+        overflow: hidden;
+        z-index: 9999;
+        width: 100%;
+        height:60px;
+        left:0px;
+        top:0px;
+        background-color: #424242;
+      }
+
+    </style>
+    <script>
+      function showblock(id){
+        window.alert("No details available for input");
+        document.getElementById("l11").style.background-color="white";
+        var f=document.getElementById(id)
+        f.style.display="block";
+        f.style.top = event.pageY + f.scrollTop + 'px';
+        f.style.left = event.pageX + 'px';
+      }
+      function hideblock(id){
+        document.getElementById(id).style.display="none";
+      }
+    </script>
+  </head>
+  <body background="noise.jpg">
+    <div class="TitleBar">
+        <h2 style="font-family: Impact, Charcoal, sans-serif; float:left; margin-left:10px;color:white;">CSS Properties</h2>
+    </div>
+    <nav class="fixed-nav-bar">
+      <ul>
+        <li><a href=# id="l11" onclick="showblock(b11);" onmouseout="hideblock(b11);">background</a></li>
+        <li><a href=# id="l12" onmouseover="showblock(b12);" onmouseout="hideblock(b12);">border</a></li>
+        <li><a href=# id="l13" onmouseover="showblock(b13);" onmouseout="hideblock(b13);">border-bottom-left-radius</a></li>
+        <li><a href=# id="l14" onmouseover="showblock(b14);" onmouseout="hideblock(b14);">background-color</a></li>
+        <li><a href=# id="l15" onmouseover="showblock(b15);" onmouseout="hideblock(b15);">background-image</a></li>
+        <li><a href=# id="l16" onmouseover="showblock(b16);" onmouseout="hideblock(b16);">background-position</a></li>
+        <li><a href=# id="l17" onmouseover="showblock(b17);" onmouseout="hideblock(b17);">background-repeat</a></li>
+        <li><a href=# id="l18" onmouseover="showblock(b18);" onmouseout="hideblock(b18);">border-bottom-right-radius</a></li>
+        <li><a href=# id="l19" onmouseover="showblock(b19);" onmouseout="hideblock(b19);">border-color</a></li>
+        <li><a href=# id="l110" onmouseover="showblock(b110);" onmouseout="hideblock(b110);">border-left</a></li>
+        <li><a href=# id="l111" onmouseover="showblock(b111);" onmouseout="hideblock(b111);">border-radius</a></li>
+        <li><a href=# id="l112" onmouseover="showblock(b112);" onmouseout="hideblock(b112);">border-style</a></li>
+        <li><a href=# id="l113" onmouseover="showblock(b113);" onmouseout="hideblock(b113);">box-shadow</a></li>
+        <li><a href=# id="l114" onmouseover="showblock(b114);" onmouseout="hideblock(b114);">bottom</a></li>
+        <li><a href=# id="l115" onmouseover="showblock(b115);" onmouseout="hideblock(b115);">display</a></li>
+        <li><a href=# id="l116" onmouseover="showblock(b116);" onmouseout="hideblock(b116);">float</a></li>
+      </ul>
+    </nav>
+    <div class="show_info" id="b11">A shorthand property for setting all the background properties in one declaration</div>
+    <div class="show_info" id="b12">Sets all the border properties in one declaration</div>
+    <div class="show_info" id="b13">Defines the shape of the border of the bottom-left corner</div>
+    <div class="show_info" id="b14">Specifies the background color of an element</div>
+    <div class="show_info" id="b15">Specifies one or more background images for an element</div>
+    <div class="show_info" id="b16">Specifies the position of a background image</div>
+    <div class="show_info" id="b17">Sets how a background image will be repeated</div>
+    <div class="show_info" id="b18">Defines the shape of the border of the bottom-right corner</div>
+    <div class="show_info" id="b19">Sets the color of the four borders</div>
+    <div class="show_info" id="b110">Sets all the left border properties in one declaration</div>
+    <div class="show_info" id="b111">A shorthand property for setting all the four border-*-radius properties</div>
+    <div class="show_info" id="b112">Sets the style of the four borders</div>
+    <div class="show_info" id="b113">Attaches one or more drop-shadows to the box</div>
+    <div class="show_info" id="b114">Specifies the bottom position of a positioned element</div>
+    <div class="show_info" id="b115">Specifies how a certain HTML element should be displayed</div>
+    <div class="show_info" id="b116">Specifies whether or not a box should float</div>
+  </body>
+</html>
